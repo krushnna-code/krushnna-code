@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krushna Mali - Personal Website</title>
+    <style>
+        /* --- General Layout Settings --- */
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-color: #ffffff;
+            --border-color: #2c2c2c;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- Grid Structure --- */
+        .container {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 5rem;
+        }
+
+        /* --- Sidebar (Left Column) --- */
+        .sidebar {
+            position: sticky;
+            top: 4rem;
+            height: fit-content;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            filter: grayscale(20%);
+            border: 1px solid var(--border-color);
+        }
+
+        .name {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .title {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Main Content (Right Column) --- */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+        }
+
+        section h2 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .content-block {
+            margin-bottom: 1.8rem;
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.3rem;
+        }
+
+        .content-title {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--accent-color);
+        }
+
+        .content-date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .content-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 0.98rem;
+            color: #cccccc;
+            margin-bottom: 1rem;
+        }
+
+        /* Inline Tags Component */
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: #1a1a1a;
+            color: var(--text-muted);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Inline Text Link Style */
+        .text-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--text-muted);
+        }
+        
+        .text-link:hover {
+            border-bottom-style: solid;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 6rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+
+        /* --- Mobile Responsive Rules --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 2rem 1.5rem;
+            }
+            .container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .sidebar {
+                position: static;
+            }
+            .profile-img {
+                margin-bottom: 1.5rem;
+            }
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            .nav-links li {
+                margin-bottom: 0;
+            }
+            .content-header {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <img src="https://via.placeholder.com/150" alt="Your Profile Picture" class="profile-img">
+            <h1 class="name">Krushna Mali</h1>
+            <p class="title">CSDS, IIIT Nagpur</p>
+            
+            <ul class="nav-links">
+                <li><a href="mailto:krushna.op@gmail.com">email</a></li>
+             
+                <li><a href="https://substack.com/@krushnx">substack</a></li>
+                <li><a href="https://www.linkedin.com/in/krushna-mali-4583b0370/" target="_blank">linkedin</a></li>
+                <li><a href="https://github.com/krushnna-code" target="_blank">github</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-content">
+            
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I am an undergrad student majoring in data science and analytics, looking forward to pursue this field in the sports sector - especially football.</p>
+                <p>Beyond engineering, I foster a keen interest in pol sci, philosophy and anthropology and writing articles about my observations once in a while</p>
+            </section>
+
+            <section id="experience">
+                <h2>Experience</h2>
+                
+                <div class="content-block">
+                    <div class="content-header">
+                        <span class="content-title">Social Media And Outreach Team</span>
+                        <span class="content-date">2025-Present</span>
+                    </div>
+                    <div class="content-subtitle">@iiitiansnetwork_</div>
+                    <p>Optimising reach, curating social media content and managing events between iiits.</p>
+                </div>
+            </section>
+
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; Made with <3 </p>
+    </footer>
+
+</body>
+</html>
